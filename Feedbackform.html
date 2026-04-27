@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f5ef, #f3eee6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 420px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+.subtitle {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+.field {
+  margin-bottom: 18px;
+}
+label {
+  font-size: 14px;
+  color: #444;
+  display: block;
+  margin-bottom: 6px;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #faf9f6;
+  outline: none;
+  transition: 0.3s;
+}
+input:focus,
+textarea:focus {
+  border-color: #f4a300;
+  box-shadow: 0 0 0 3px rgba(244,163,0,0.15);
+}
+textarea {
+  height: 110px;
+  resize: none;
+}
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.stars input {
+  display: none;
+}
+.stars label {
+  font-size: 26px;
+  color: #ddd;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 40px;
+}
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #f4a300;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  background: #f4a300;
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(244,163,0,0.35);
+  position: relative;
+  overflow: hidden;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+  margin: auto;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.card {
+  width: 420px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Fields */
+.field {
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 14px;
+  color: #334155;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  outline: none;
+  transition: 0.25s;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+}
+
+textarea {
+  height: 110px;
+  resize: none;
+}
+
+/* Stars */
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 24px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #3b82f6;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(37,99,235,0.25);
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Loader */
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+  margin: auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#status {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="card">
+    <h1>We Value Your Feedback</h1>
+    <p class="subtitle">Help us improve by sharing your experience</p>
+    <form id="feedbackForm">
+      <div class="field">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Ex: Dinesh Kute" required>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="dinesh.kute@pccoepune.org" required>
+      </div>
+      <div class="field">
+        <label>Rate Our Website</label>
+        <div class="stars">
+          <input type="radio" name="rating" id="star5" value="5">
+          <label for="star5">★</label>
+          <input type="radio" name="rating" id="star4" value="4">
+          <label for="star4">★</label>
+          <input type="radio" name="rating" id="star3" value="3">
+          <label for="star3">★</label>
+          <input type="radio" name="rating" id="star2" value="2">
+          <label for="star2">★</label>
+          <input type="radio" name="rating" id="star1" value="1">
+          <label for="star1">★</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Give your Feedback for our Website</label>
+        <textarea id="message" placeholder="Tell us about your experience..." required></textarea>
+      </div>
+      <button type="submit" id="submitBtn">
+        <span class="btn-text">Submit Feedback</span>
+        <span class="loader"></span>
+      </button>
+      <p id="status"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById("feedbackForm");
+const status = document.getElementById("status");
+const btn = document.getElementById("submitBtn");
+const loader = document.querySelector(".loader");
+const btnText = document.querySelector(".btn-text");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOo10BUrm1TpEyxT9Yzkz5-6BdnJ9AB1qr8D_JNOxQ1IiMQ8cSGs0VeYVL_rplmJDjJA/exec";
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const rating = document.querySelector("input[name='rating']:checked");
+  if (!rating) {
+    status.style.color = "red";
+    status.innerText = "Please select a rating";
+    return;
+  }
+  btnText.style.display = "none";
+  loader.style.display = "block";
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: new URLSearchParams({
+      name: nameInput.value || "Anonymous",
+      email: emailInput.value || "Not Provided",
+      rating: rating.value,
+      message: message.value
+    })
+  })
+  .then(() => {
+    status.style.color = "#2e7d32";
+    status.innerText = "✅ Thank you for your feedback!";
+    form.reset();
+  })
+  .catch(() => {
+    status.style.color = "red";
+    status.innerText = "❌ Something went wrong";
+  })
+  .finally(() => {
+    btnText.style.display = "inline";
+    loader.style.display = "none";
+  });
+});
+</script>
+</body>
+</html>
